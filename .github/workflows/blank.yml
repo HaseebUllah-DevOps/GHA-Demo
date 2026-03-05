@@ -2,27 +2,12 @@ name: Manual Hello Workflow
 
 # This allows manual trigger
 on:
-  workflow_dispatch:
+  push: 
 
 jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
       - name: Build step
-        run: echo "A Demo Build"
-  test:
-   runs-on: ubuntu-22.04
-   needs: build
-   steps:
-     - name: Test phase
-       run: echo "A Demo Test"
-
-  deploy:
-   runs-on: ubuntu-22.04
-   needs: test
-   steps:
-     - name: Deploy
-       run: echo "A Demo Deploy"
-       
-    
-       
+        run: echo "Hello, ${{ secrets.DOCKER_PASSWORD }}"
+ 
