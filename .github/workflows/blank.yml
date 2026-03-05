@@ -1,13 +1,15 @@
-name: Manual Hello Workflow
+name: GitHub Action Demo
 
 # This allows manual trigger
 on:
   push: 
 
 jobs:
-  build:
+  action-demo:
     runs-on: ubuntu-22.04
     steps:
-      - name: Build step
-        run: echo "Hello, ${{ secrets.DOCKER_PASSWORD }}"
+      - name: Checkout code 
+        uses: action/checkout@4
+      - name: print Index.html file
+        run: cat index.html
  
