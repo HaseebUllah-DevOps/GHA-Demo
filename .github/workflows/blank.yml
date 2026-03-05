@@ -9,4 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Say Hello
-        run: echo "Hello! This workflow was triggered manually!"
+        run: |
+          echo "This Line One"
+          echo "This Is Line Two"
