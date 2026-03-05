@@ -5,10 +5,22 @@ on:
   workflow_dispatch:
 
 jobs:
-  hello-world:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-22.04
     steps:
-      - name: Say Hello
-        run: |
-          echo "This Line One"
-          echo "This Is Line Two"
+      - name: Build step
+        run: echo "A Demo Build"
+  test:
+   runs-on: ubuntu-22.04
+   steps:
+     - name: Test phase
+       run: echo "A Demo Test"
+
+  deploy:
+   runs-on: ubuntu-22.04
+   steps:
+     - name: Deploy
+       run: echo "A Demo Deploy"
+       
+    
+       
