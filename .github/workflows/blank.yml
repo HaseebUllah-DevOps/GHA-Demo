@@ -1,15 +1,16 @@
 name: GitHub Action Demo
 
-# This allows manual trigger
 on:
-  push: 
+  push:
 
 jobs:
   action-demo:
     runs-on: ubuntu-22.04
+
     steps:
-      - name: Checkout code 
-        uses: action/checkout@4
-      - name: print Index.html file
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print index.html file
         run: cat index.html
  
