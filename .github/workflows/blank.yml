@@ -12,12 +12,14 @@ jobs:
         run: echo "A Demo Build"
   test:
    runs-on: ubuntu-22.04
+   needs: build
    steps:
      - name: Test phase
        run: echo "A Demo Test"
 
   deploy:
    runs-on: ubuntu-22.04
+   needs: test
    steps:
      - name: Deploy
        run: echo "A Demo Deploy"
